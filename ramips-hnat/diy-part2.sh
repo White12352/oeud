@@ -45,16 +45,20 @@ rm -rf feeds/packages/net/xray-core
 git clone --depth=1 https://github.com/fw876/helloworld.git package/helloworld
 rm -rf feeds/luci/applications/luci-app-passwall
 rm -rf feeds/luci/applications/luci-app-vssr
+#rm -rf feeds/packages/lang/lua-maxminddb
 rm -rf feeds/luci/applications/luci-app-openclash
-#git clone https://github.com/vernesong/OpenClash package/luci-app-openclash
+git clone --depth 1 -b master https://github.com/vernesong/OpenClash package/luci-app-openclash
 git clone --depth 1 -b packages https://github.com/xiaorouji/openwrt-passwall package/passwall
 git clone --depth 1 -b luci https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
+#git clone --depth 1 -b master https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
+#git clone --depth 1 -b master https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
 rm -rf feeds/luci/applications/luci-app-smartdns
 rm -rf feeds/packages/net/smartdns
 svn co https://github.com/281677160/openwrt-package/trunk/luci-app-smartdns package/luci-app-smartdns
 svn co https://github.com/281677160/openwrt-package/trunk/smartdns package/smartdns
-svn co https://github.com/kenzok8/openwrt-packages/trunk/aliyundrive-webdav package/aliyundrive-webdav
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-aliyundrive-webdav package/luci-app-aliyundrive-webdav
+#svn co https://github.com/kenzok8/openwrt-packages/trunk/aliyundrive-webdav package/aliyundrive-webdav
+#svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-aliyundrive-webdav package/luci-app-aliyundrive-webdav
+git clone --depth=1 https://github.com/messense/aliyundrive-webdav.git package/aliyundrive-webdav
 #rm -rf package/feeds/luci/luci-theme-neobird
 #git clone https://github.com/lwb1978/luci-theme-neobird.git package/feeds/luci/luci-theme-neobird
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/feeds/luci/luci-theme-argon-18.06
