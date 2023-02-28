@@ -14,16 +14,16 @@ mkdir -p files/etc/hotplug.d/block && curl -fsSL https://raw.githubusercontent.c
 
 # Modify default IP 默认IP由1.1修改为0.1
 # sed -i 's/192.168.1.1/192.168.0.1/g' package/base-files/files/bin/config_generate
-#sed -i 's/192.168.0.1/192.168.5.5/g' package/base-files/files/bin/config_generate
-#sed -i 's/192.168.2.1/192.168.5.5/g' package/base-files/files/bin/config_generate
-#sed -i 's/192.168.3.1/192.168.5.5/g' package/base-files/files/bin/config_generate
-#sed -i 's/192.168.4.1/192.168.5.5/g' package/base-files/files/bin/config_generate
-#sed -i 's/192.168.5.1/192.168.5.5/g' package/base-files/files/bin/config_generate
-#sed -i 's/192.168.6.1/192.168.5.5/g' package/base-files/files/bin/config_generate
-#sed -i 's/192.168.7.1/192.168.5.5/g' package/base-files/files/bin/config_generate
-#sed -i 's/192.168.8.1/192.168.5.5/g' package/base-files/files/bin/config_generate
-#sed -i 's/192.168.9.1/192.168.5.5/g' package/base-files/files/bin/config_generate
-sed -i 's/192.168.1.1/192.168.5.6/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.0.1/192.168.6.5/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.2.1/192.168.6.5/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.3.1/192.168.6.5/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.4.1/192.168.6.5/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.5.1/192.168.6.5/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.6.1/192.168.6.5/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.7.1/192.168.6.5/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.8.1/192.168.6.5/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.9.1/192.168.6.5/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.6.1/192.168.6.5/g' package/base-files/files/bin/config_generate
 
 # 最大连接数修改为65535
 #sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=65535' package/base-files/files/etc/sysctl.conf
@@ -34,15 +34,38 @@ rm -rf feeds/packages/net/adguardhome
 rm -rf feeds/luci/applications/luci-app-adguardhome
 svn co https://github.com/281677160/openwrt-package/trunk/luci-app-adguardhome package/luci-app-adguardhome
 svn co https://github.com/281677160/openwrt-package/trunk/adguardhome package/adguardhome
+rm -rf feeds/luci/applications/luci-app-eqos
+#svn co https://github.com/White12352/luci/branches/openwrt-18.06-k5.4/applications/luci-app-eqos package/luci-app-eqos
+#git clone --depth 1 -b main https://github.com/TorBoxCode/luci-app-eqos package/luci-app-eqos
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-easymesh package/luci-app-easymesh
 #svn co https://github.com/281677160/openwrt-package/trunk/luci-app-adguardhome package/luci-app-mosdns
 #svn co https://github.com/281677160/openwrt-package/trunk/mosdns package/mosdns
 #rm -rf package/helloworld
 rm -rf feeds/luci/applications/luci-app-ssr-plus
+rm -rf feeds/packages/net/brook
+rm -rf feeds/packages/net/chinadns-ng
+rm -rf feeds/packages/net/dns2socks
+rm -rf feeds/packages/net/dns2tcp
 rm -rf feeds/packages/net/hysteria
+rm -rf feeds/packages/net/ipt2socks
+rm -rf feeds/packages/net/microsocks
 rm -rf feeds/packages/net/naiveproxy
+rm -rf feeds/packages/net/pdnsd-alt
+rm -rf feeds/packages/net/sagernet-core
+rm -rf feeds/packages/net/shadowsocks-rust
+rm -rf feeds/packages/net/shadowsocksr-libev
+rm -rf feeds/packages/net/simple-obfs
+rm -rf feeds/packages/net/sing-box
+rm -rf feeds/packages/net/ssocks
+rm -rf feeds/packages/net/tcping
+rm -rf feeds/packages/net/trojan-go
+rm -rf feeds/packages/net/trojan-plus
+rm -rf feeds/packages/net/trojan
+rm -rf feeds/packages/net/v2ray-core
+rm -rf feeds/packages/net/v2ray-plugin
 rm -rf feeds/packages/net/xray-core
-git clone --depth=1 https://github.com/fw876/helloworld.git package/helloworld
+rm -rf feeds/packages/net/xray-plugin
+#git clone --depth=1 https://github.com/fw876/helloworld.git package/helloworld
 rm -rf feeds/luci/applications/luci-app-passwall
 rm -rf feeds/luci/applications/luci-app-vssr
 #rm -rf feeds/packages/lang/lua-maxminddb
@@ -50,6 +73,7 @@ rm -rf feeds/luci/applications/luci-app-openclash
 git clone --depth 1 -b master https://github.com/vernesong/OpenClash package/luci-app-openclash
 git clone --depth 1 -b packages https://github.com/xiaorouji/openwrt-passwall package/passwall
 git clone --depth 1 -b luci https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
+#git clone --depth 1 -b luci-smartdns-new-version https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall-smartdns-new-version
 #git clone --depth 1 -b master https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
 #git clone --depth 1 -b master https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
 rm -rf feeds/luci/applications/luci-app-smartdns
