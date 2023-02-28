@@ -23,7 +23,7 @@ mkdir -p files/etc/hotplug.d/block && curl -fsSL https://raw.githubusercontent.c
 #sed -i 's/192.168.7.1/192.168.6.5/g' package/base-files/files/bin/config_generate
 #sed -i 's/192.168.8.1/192.168.6.5/g' package/base-files/files/bin/config_generate
 #sed -i 's/192.168.9.1/192.168.6.5/g' package/base-files/files/bin/config_generate
-sed -i 's/192.168.6.1/192.168.6.5/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.6.5/g' package/base-files/files/bin/config_generate
 
 # 最大连接数修改为65535
 #sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=65535' package/base-files/files/etc/sysctl.conf
